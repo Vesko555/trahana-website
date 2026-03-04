@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Традиционна Трахана</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="description" content="Поръчайте истинска традиционна трахана, приготвена по автентична рецепта. Насладете се на автентичен вкус, купете онлайн и открийте нашите рецепти тук!">
+</head>
+<body>
+
+<!-- Навигация -->
+<nav class="navbar navbar-expand-lg">
+  <div class="container">
+    <a class="navbar-brand" href="index.html#product">Трахана</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Начало</a></li>
+        <li class="nav-item"><a class="nav-link" href="recepti.html">Рецепти</a></li>
+        <li class="nav-item"><a class="nav-link" href="zanas.html">За нас</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero секция -->
+<section id="hero" class="hero d-flex align-items-center justify-content-center">
+  <div class="text-center hero-text">
+    <h1>Традиционна Трахана</h1>
+    <p>Традиция, съхранена във всяка хапка</p>
+    <p>Поръчай тук!</p>
+    <a href="#product" class="scroll-down">
+     <img src="img/scroll-icon.png" alt="Поръчай трахана тук">
+    </a>
+  </div>
+</section>
+
+<section id="product" class="product-section">
+  <div class="product-container">
+
+    <!-- Лява част – Слайдшоу -->
+    <div class="product-gallery">
+      <button class="arrow left" onclick="changeSlide(-1)">&#10094;</button>
+      
+      <img src="img/product1.jpg" class="slide active" alt="Предна страна на опаковка традиционна домашна трахана – натурален продукт">
+      <img src="img/product2.jpg" class="slide" alt="Гръб на опаковка трахана с подробна рецепта и инструкции за начина на приготвяне">
+      <!-- <img src="img/product3.png" class="slide" alt="Гръб на опаковка трахана с подробна рецепта и инструкции за начина на приготвяне">-->
+      <img src="img/product4.png" class="slide" alt="Състав и хранителни стойности на традиционна домашна трахана – без консерванти">
+
+      <button class="arrow right" onclick="changeSlide(1)">&#10095;</button>
+    </div>
+
+    <!-- Дясна част – Информация -->
+    <div class="product-info">
+      <h2>Традиционна Трахана 400гр</h2>
+
+      <ul>
+        <li>✔ Натурални съставки</li>
+        <li>✔ Без консерванти</li>
+        <li>✔ По автентична рецепта</li>
+        <li>✔ Бърза за приготвяне</li>
+      </ul>
+
+       <p style="font-size: 1rem; margin-bottom: 10px; color: #666;">
+        <small>В наличност</small>
+      </p>
+
+      <div class="price">
+        <span>1.84 €</span> / 3.60 лв
+      </div>
+
+     <div class="product-buttons">
+    <a href="tel:+359896727832" 
+       class="btn phone-btn" 
+       onclick="gtag('event', 'click_phone_order');">
+       Поръчай по телефон
+    </a>
+    <a href="form.html" 
+       class="btn email-btn" 
+       onclick="gtag('event', 'click_online_order');">
+       Поръчай онлайн
+    </a>
+     </div>
+      
+    </div>
+
+  </div>
+</section>
+
+<!-- Секция Рецепти -->
+<section id="recepti-section" class="hero-section d-flex align-items-center justify-content-center" 
+         style="background-image: url('img/recepta.jpg');">
+  <div class="text-center hero-overlay">
+    <h2>Открий разнообразни и вкусни рецепти</h2>
+    <p>Научи как да приготвяш нашата трахана по различни начини.</p>
+    <a href="recepti.html" class="btn btn-primary mt-2">Рецепти</a>
+  </div>
+</section>
+<br>
+<!-- Секция За нас -->
+<section id="zanas-section" class="hero-section d-flex align-items-center justify-content-center" 
+         style="background-image: url('img/zanas.jpg');">
+  <div class="text-center hero-overlay">
+    <h2>Кои сме ние</h2>
+    <p>Семейна фурна с дългогодишен опит в производството на традиционна българска трахана.</p>
+    <a href="zanas.html" class="btn btn-primary mt-2">За нас</a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-primary text-white py-5">
+  <div class="container">
+    <div class="row text-center text-md-start">
+      
+      <div class="col-md-4 mb-4 mb-md-0">
+        <h5 class="text-uppercase fw-bold mb-3">Контакти</h5>
+        <p class="mb-1">
+          <i class="bi bi-telephone-fill me-2"></i>
+          <a href="tel:+359896727832" class="text-white text-decoration-none">+359 89 672 7832</a>
+        </p>
+        <p>
+          <i class="bi bi-envelope-fill me-2"></i>
+          <a href="mailto:trahana.bulgaria@abv.bg" class="text-white text-decoration-none">trahana.bulgaria@abv.bg</a>
+        </p>
+      </div>
+
+      <div class="col-md-4 mb-4 mb-md-0 text-md-center">
+        <h5 class="text-uppercase fw-bold mb-3">Последвайте ни</h5>
+        <a href="https://www.facebook.com/profile.php?id=100026218975188" class="text-white me-3 fs-4" title="Facebook">
+          Facebook
+        </a>
+        <a href="#" class="text-white fs-4" title="Instagram">
+          Instagram
+        </a>
+      </div>
+
+      <div class="col-md-4 text-md-end">
+        <h5 class="text-uppercase fw-bold mb-3">Информация</h5>
+        <ul class="list-unstyled">
+          <li><a href="/privacy-policy.html" class="text-white text-decoration-none">Политика за поверителност</a></li>
+          <li><a href="/cookies.html" class="text-white text-decoration-none">Бисквитки</a></li>
+          <li><a href="/terms-and-conditions.html" class="text-white text-decoration-none">Общи условия</a></li>
+        </ul>
+      </div>
+      
+    </div>
+
+    <hr class="my-4 bg-white opacity-25">
+
+    <div class="text-center">
+      <p class="mb-0">&copy; 2026 Трахана. Всички права запазени.</p>
+    </div>
+  </div>
+</footer>
+
+<div id="cookie-banner" style="position: fixed; bottom: 20px; left: 20px; right: 20px; background: #222; color: #fff; padding: 20px; border-radius: 10px; z-index: 9999; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+    <div style="max-width: 1000px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 15px;">
+        <span style="font-size: 14px; font-family: sans-serif;">
+            Ние използваме бисквитки, за да анализираме трафика от Meta и да подобрим сайта си.
+        </span>
+        <div>
+            <button id="btn-accept" style="background: #4CAF50; color: white; border: none; padding: 10px 20px; cursor: pointer; border-radius: 5px; font-weight: bold;">Приемам</button>
+            <button id="btn-decline" style="background: #f44336; color: white; border: none; padding: 10px 20px; cursor: pointer; border-radius: 5px; margin-left: 10px;">Отказвам</button>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,917 @@
+body {
+  background-color: white;  /* леко светло сиво */
+}
+
+/* Hero секция */
+.hero {
+  background: url('../img/trahana-hero.jpg') center center/cover no-repeat;
+  height: 100vh; /* 70-80% от екрана */
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* покрива цялата секция */
+  background: rgba(0, 0, 0, 0.45); /* 0.45 = степен на затъмняване */
+  z-index: 1;
+}
+.hero-text {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.hero-text h1 {
+  color: white;
+  font-size: clamp(3rem, 7vw, 5rem);
+  font-weight: 800;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.6);
+  margin-bottom: 1rem;
+}
+
+.hero-text p {
+  color: white;
+  font-size: clamp(1.3rem, 3vw, 2rem);
+  margin-bottom: 1rem;
+}
+
+.product-section {
+  background: #f8f5f0;
+  padding: 100px 20px;
+}
+
+.product-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+/* ===== ГАЛЕРИЯ ===== */
+.product-gallery {
+  flex: 1;
+  position: relative;
+}
+
+.product-gallery img {
+  width: 100%;        /* за да е responsive */
+  max-height: 400px;  /* тук задаваш височина по твой вкус */
+  object-fit: contain; /* запазва цялото съдържание на снимката */
+  display: none;
+  border-radius: 15px;
+}
+.product-gallery img.active {
+  display: block;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.6);
+  color: white;
+  border: none;
+  font-size: 30px;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.arrow.left {
+    left: 30px;
+}
+
+.arrow.right {
+    right: 30px;
+}
+
+@media (max-width: 767px) {
+    .arrow.left {
+        left: 10px;
+    }
+
+    .arrow.right {
+        right: 10px;
+    }
+}
+
+/* ===== ИНФОРМАЦИЯ ===== */
+.product-info {
+  flex: 1;
+}
+
+.product-info h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.product-info ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+.product-info li {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.price {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.product-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.btn {
+  padding: 15px 25px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.phone-btn {
+  background: #b22222;
+  color: white;
+}
+
+.email-btn {
+  background: #333;
+  color: white;
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  .product-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .product-buttons {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
+
+/* Основен стил за линковете във фуутъра */
+footer a {
+  transition: all 0.3s ease;
+  opacity: 0.85;
+}
+
+/* Ефект при hover */
+footer a:hover {
+  color: #ffffff !important;
+  opacity: 1;
+  text-decoration: underline;
+  padding-left: 2px; /* Леко отместване за динамика */
+}
+
+/* Стил за заглавията в секциите */
+footer h5 {
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+}
+
+/* Responsive малки екран */
+@media (max-width: 576px) {
+  .product-img {
+    width: 150px;
+    height: 150px;
+  }
+  .hero-text h1 {
+    font-size: 3rem;
+  }
+}
+
+/* Navbar прозрачен над hero със постоянен hover ефект */
+.navbar {
+  background-color: rgba(0, 0, 0, 0.3); /* тъмен фон на целия navbar */
+  position: absolute;  /* над hero */
+  width: 100%;
+  z-index: 10;
+  padding: 1rem 0;
+  transition: none; /* премахваме плавното променяне при hover */
+}
+
+/* Линковете остават бели и същата големина */
+.navbar .nav-link {
+  color: white !important;
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: none; /* няма подскачане, няма промяна на цвета */
+}
+
+.navbar .navbar-brand {
+  color: white !important; /* винаги бяло */
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.navbar-toggler {
+  color: white !important;
+  border-color: white; /* рамката на бутона */
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.navbar .nav-link:hover {
+  text-decoration: underline;
+}
+
+.hero-section {
+  height: 100vh; /* височина на секцията */
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+
+/* Overlay за текста */
+.hero-overlay {
+  background-color: rgba(0, 0, 0, 0.4); /* лек черен overlay за четливост */
+  padding: 50px;
+  border-radius: 10px;
+  max-width: 100%;
+  text-align: center;  
+}
+
+/* Бутон */
+.hero-overlay .btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.hero-overlay .btn-primary:hover {
+  background-color: #3399ff;
+  border-color: #3399ff;
+}
+
+/* Responsive за малки екрани */
+@media (max-width: 768px) {
+  .hero-overlay {
+    width: 100%;
+    height: 100%;               /* покрива целия родител */
+    background-color: rgba(0,0,0,0.35); 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;    /* вертикално центриране */
+    text-align: center;
+    box-sizing: border-box;
+    border-radius: 0;
+    padding: 20px;              /* само вътрешно разстояние за текста */
+  }
+
+  .hero-section {
+    height: 50vh;               /* по-малка височина за мобилно */
+  }
+
+  .hero-overlay h2 {
+    font-size: 1.8rem;
+  }
+
+  .hero-overlay p {
+    font-size: 1rem;
+  }
+
+  .hero-overlay .btn {
+    width: 100%;                /* бутонът става full width */
+  }
+}
+
+.scroll-down {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 2.5rem;
+  color: white;
+  text-decoration: none;
+  animation: bounce 2s infinite;
+  transition: 0.3s;
+}
+
+.scroll-down:hover {
+  color: #ddd;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Рецепти страница*/
+
+.recipes-page {
+  padding: 120px 20px 80px 20px; /* заради fixed navbar */
+  background-color: #f9f9f9;
+}
+
+.page-title {
+  text-align: center;
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 60px;
+  color: white;
+}
+
+.recipes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.recipe-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+
+.recipe-card:hover {
+  transform: translateY(-10px);
+}
+
+.recipe-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.recipe-content {
+  padding: 25px;
+}
+
+.recipe-content h3 {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+}
+
+.recipe-content p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.recipe-btn {
+  display: inline-block;
+  background-color: #0d6efd;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.recipe-btn:hover {
+  background-color: #0b5ed7;
+}
+
+@media (max-width: 992px) {
+  .recipes-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .recipes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .page-title {
+    font-size: 2rem;
+    color: white;
+  }
+}
+
+.recipes-page {
+  position: relative;
+  min-height: 100vh;
+  background: url('../img/trahana-recepti.jpg') center center/cover no-repeat fixed;
+}
+
+/* Overlay */
+.recipes-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 0;
+}
+
+/* Всичко вътре да е над overlay-а */
+.recipes-page > * {
+  position: relative;
+  z-index: 1;
+}
+
+
+.about-background {
+  position: relative;
+  background: url('../img/zanas.jpg') center center/cover no-repeat fixed;
+  min-height: 100vh;
+}
+
+/* Overlay */
+.about-background::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+
+/* Всичко вътре да е над overlay */
+.about-background > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* HERO */
+.about-hero {
+  padding: 60px 20px 80px 20px;
+  color: white;
+}
+
+.about-hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.about-subtitle {
+  color: white;
+}
+
+/* Светъл premium box върху тъмен фон */
+.about-box {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  padding: 80px;
+  border-radius: 25px;
+  margin-bottom: 100px;
+
+  border: 1px solid rgba(255,255,255,0.2);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+
+  color: white;
+}
+
+/* Values */
+.value-box {
+  padding: 20px;
+  transition: 0.3s ease;
+}
+
+.value-box:hover {
+  transform: translateY(-6px);
+}
+
+.about-image {
+  width: 95%;
+  max-width: none;
+  border-radius: 25px;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+}
+
+@media (max-width: 768px) {
+
+  .about-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    margin-top: 30px;
+  }
+
+}
+
+
+
+/* HERO */
+.single-recipe .recipe-hero {
+  background: url('../img/recepta.jpg') center/cover no-repeat;
+  height: 60vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Слой, който покрива ЦЯЛАТА снимка постоянно */
+.single-recipe .recipe-hero .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Фиксирано затъмнение 50% */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 0 20px;
+}
+
+.single-recipe .recipe-hero h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 0;
+  position: relative; /* Гарантира, че е над слоя */
+  z-index: 2;
+}
+
+.single-recipe .recipe-hero p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  position: relative;
+  z-index: 2;
+}
+/* CONTENT */
+.single-recipe .recipe-content {
+  padding: 80px 0;
+}
+
+.single-recipe .ingredients {
+  background: rgba(0,0,0,0.09);
+  padding: 30px;
+  border-radius: 15px;
+}
+
+.single-recipe .instructions {
+  padding: 30px;
+}
+
+.single-recipe .ingredients h3,
+.instructions h3 {
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.single-recipe .ingredients ul li,
+.instructions ol li {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+/* CTA */
+.single-recipe .recipe-cta {
+  background: #f8f5f0;
+  padding: 80px 20px;
+}
+
+.single-recipe .recipe-cta h2 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+  .recipe-hero {
+    height: 50vh;
+  }
+
+  .recipe-hero .overlay {
+    padding: 20px;
+  }
+
+  .recipe-hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .recipe-content {
+    padding: 40px 15px;
+  }
+
+}
+
+
+
+/*form*/
+
+:root {
+    --primary: #2c3e50;
+    --accent: #27ae60;
+    --bg: #f4f7f6;
+}
+
+ .page-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Заема цялата височина на екрана */
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#orderForm .delivery-note {
+    font-size: 12px;
+    color: #e67e22; /* Оранжев цвят за внимание */
+    margin-top: 10px;
+    font-style: italic;
+    line-height: 1.4;
+}
+
+/* Бутон Назад */
+.back-btn-modern {
+    position: fixed;
+    top: 25px;
+    left: 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 18px;
+    background: white;
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 50px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: 0.3s;
+    z-index: 100;
+}
+
+.back-btn-modern:hover {
+    color: var(--accent);
+    transform: translateX(-3px);
+}
+
+/* Карта */
+.order-card {
+    width: 90%;
+    max-width: 500px;
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    margin: 60px 0;
+}
+
+#orderForm .row { display: flex; gap: 10px; }
+#orderForm .flex-2 { flex: 2; }
+#orderForm .flex-1 { flex: 1; }
+
+#orderForm .form-group { margin-bottom: 15px; }
+#orderForm label { display: block; margin-bottom: 5px; font-weight: 600; font-size: 14px; color: #555; }
+
+#orderForm input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #eee;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+#orderForm input:focus { outline: none; border-color: var(--accent); }
+
+/* Калкулатор */
+#orderForm .price-display {
+    background: #f8fdfa;
+    padding: 15px;
+    border-radius: 12px;
+    margin: 20px 0;
+    text-align: center;
+    border: 2px dashed var(--accent);
+}
+
+#orderForm .price-display strong { font-size: 26px; display: block; color: var(--primary); }
+
+#orderForm #submitBtn {
+    width: 100%;
+    background: var(--accent);
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#orderForm #submitBtn:hover { background: #219150; transform: translateY(-2px); }
+
+#orderForm .success-msg { text-align: center; padding: 20px; }
+
+@media (max-width: 600px) {
+    .back-btn-modern span { display: none; }
+    .back-btn-modern { padding: 12px; border-radius: 50%; }
+}
+
+#orderForm .package-selector {
+    display: flex;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+#orderForm .pkg-card {
+    flex: 1;
+    background: #fff;
+    border: 2px solid #eee;
+    border-radius: 12px;
+    padding: 15px 5px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100px;
+}
+
+#orderForm .pkg-card.active {
+    border-color: var(--accent);
+    background-color: #f0fdf4;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(39, 174, 96, 0.1);
+}
+
+#orderForm .pkg-title { font-size: 11px; color: #777; text-transform: uppercase; font-weight: bold; }
+#orderForm .pkg-qty { font-size: 16px; font-weight: 800; color: var(--primary); margin: 4px 0; }
+#orderForm .pkg-price { font-size: 13px; color: var(--accent); font-weight: bold; }
+
+#orderForm .pkg-badge {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent);
+    color: white;
+    font-size: 9px;
+    padding: 2px 8px;
+    border-radius: 20px;
+    white-space: nowrap;
+    z-index: 10;
+}
+
+#orderForm #customInput {
+    width: 90%;
+    margin: 5px auto 0;
+    padding: 5px;
+    border: 1px solid var(--accent);
+    border-radius: 6px;
+    text-align: center;
+    font-size: 14px;
+}
+
+@media (max-width: 480px) {
+    #orderForm .package-selector { flex-direction: column; }
+    #orderForm .pkg-card { min-height: 80px; }
+}
+/* Стил за чекбокса във формата */
+.form-check-custom {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin: 20px 0;
+    text-align: left;
+}
+
+/* Правим самото квадратче малко по-голямо и удобно */
+.form-check-custom input[type="checkbox"] {
+    width: 20px !important;
+    height: 20px !important;
+    min-width: 20px;
+    margin-top: 2px;
+    cursor: pointer;
+    accent-color: var(--accent); /* Използва твоето зелено */
+}
+
+/* Стил за текста до него */
+.form-check-custom label {
+    font-size: 13px !important;
+    line-height: 1.5;
+    color: #555;
+    cursor: pointer;
+    font-weight: 500 !important;
+    margin-bottom: 0 !important; /* Премахва стандартни марджини */
+}
+
+.form-check-custom label a {
+    color: var(--accent);
+    text-decoration: underline;
+    transition: opacity 0.2s;
+}
+
+.form-check-custom label a:hover {
+    opacity: 0.8;
+}
+
+
+
+
+
+
+/* Изолирани стилове за правни страници */
+
+.legal-document-page {
+    max-width: 900px;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.legal-content-wrapper {
+    line-height: 1.7;
+    color: #2d3436;
+    border: 1px solid #eee;
+}
+
+.legal-title {
+    color: #0d6efd; /* Син цвят, съответстващ на bg-primary */
+    font-weight: 800;
+    border-bottom: 2px solid #f8f9fa;
+}
+
+.legal-subtitle {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #444;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+/* Малка синя черта пред подзаглавията */
+.legal-subtitle::before {
+    content: "";
+    display: inline-block;
+    width: 5px;
+    height: 24px;
+    background-color: #0d6efd;
+    margin-right: 12px;
+    border-radius: 2px;
+}
+
+.legal-list {
+    list-style-type: none;
+    padding-left: 5px;
+}
+
+.legal-list li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 10px;
+}
+
+/* Красиви булети за списъка */
+.legal-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #0d6efd;
+    font-weight: bold;
+}
+
+.legal-contact-info {
+    background: #f8fbff;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px dashed #b2d7ff;
+}
+
+.legal-footer-note {
+    font-style: italic;
+}
+
+/* Мобилна оптимизация */
+@media (max-width: 576px) {
+    .legal-document-page {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .legal-content-wrapper {
+        padding: 20px !important;
+    }
+}
+
+#cookie-banner {
+    display: none;
+}
