@@ -85,7 +85,7 @@ const msg = document.getElementById('thankYouMessage');
 
 // Цени
 const PRICE_PER_UNIT_BGN = 3.60;
-const PRICE_PER_UNIT_EUR = 1.84;
+const PRICE_PER_UNIT_EUR = 1.85;
 
 // Елементи
 const qtyHiddenInput = document.getElementById('quantity');
@@ -200,5 +200,6 @@ if (form) {
         });
     });
 }
+
 
 
