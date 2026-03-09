@@ -4,7 +4,7 @@ body {
 
 /* Hero секция */
 .hero {
-  background: url('../img/trahana-hero.jpg') center center/cover no-repeat;
+  background: url('../img/trahana-hero.webp') center center/cover no-repeat;
   height: 100vh; /* 70-80% от екрана */
   position: relative;
   display: flex;
@@ -914,4 +914,5 @@ html {
 
 #cookie-banner {
     display: none;
+
 }
