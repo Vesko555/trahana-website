@@ -141,12 +141,12 @@ body {
 }
 
 .phone-btn {
-  background: #b22222;
+  background: #007bff;
   color: white;
 }
 
 .email-btn {
-  background: #333;
+  background: #007bff;
   color: white;
 }
 
@@ -168,6 +168,26 @@ body {
   .btn {
     width: 100%;
   }
+}
+
+.product-info p.order-call-text {
+    display: block;
+    margin: 20px 0 10px 0; /* Разстояние: 20px от цената и 10px над бутоните */
+    padding: 0;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #444;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
+}
+
+/* Центриране за мобилни устройства, ако и останалото ти инфо е центрирано */
+@media (max-width: 768px) {
+    .product-info p.order-call-text {
+        text-align: center;
+        margin-top: 15px;
+    }
 }
 
 /* Основен стил за линковете във фуутъра */
@@ -916,3 +936,4 @@ html {
     display: none;
 
 }
+
