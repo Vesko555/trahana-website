@@ -189,7 +189,23 @@ body {
         margin-top: 15px;
     }
 }
+/* Стил за пояснението за минимална поръчка */
+.product-info .order-note {
+    display: block;
+    font-size: 0.85rem; /* Малко по-дребен шрифт */
+    color: #888; /* Сивкав цвят, за да не "бие" на очи колкото бутоните */
+    margin: -5px 0 15px 0; /* Приближава го нагоре към "Поръчай по телефон" */
+    font-style: italic; /* Наклонен текст за по-добър вид */
+    line-height: 1.4;
+}
 
+/* Центриране за мобилни устройства */
+@media (max-width: 768px) {
+    .product-info .order-note {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+}
 /* Основен стил за линковете във фуутъра */
 footer a {
   transition: all 0.3s ease;
@@ -724,5 +740,6 @@ html {
     display: none;
 
 }
+
 
 
